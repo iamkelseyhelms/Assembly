@@ -1,2 +1,2 @@
 # Assembly
-##Languages Used: MASM
+##Languages Used: x86 MASM
