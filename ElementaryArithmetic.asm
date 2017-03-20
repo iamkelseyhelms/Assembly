@@ -50,7 +50,7 @@ char			BYTE	?
 
 main PROC
 
-;----------------------------------------------------------------------------------------------Introduce programmer
+;------------------------------------------------Introduce programmer
 	mov	edx, OFFSET intro
 	call	WriteString
 	call	CrLf
@@ -64,7 +64,7 @@ main PROC
 	mov	edx, OFFSET intro4
 	call	WriteString
 
-;----------------------------------------------------------------------------------------------Get numbers from user
+;------------------------------------------------Get numbers from user
 Top :
 	call	CrLf
 	call	Crlf
@@ -78,30 +78,30 @@ Top :
 	mov	number2, eax
 	call	CrLf
 
-;----------------------------------------------------------------------------------------------Test if number1 is greater than number2
+;------------------------------------------------Test if number1 is greater than number2
 	mov	eax, number1
 	cmp	eax, number2
 	jl	NegSubtraction
 
-;----------------------------------------------------------------------------------------------Calculate results
+;------------------------------------------------Calculate results
 
-;----------------------------------------------------------------------------------------------Add
+;------------------------------------------------Add
 	mov	eax, number1
 	add	eax, number2
 	mov	sum, eax
 
-;----------------------------------------------------------------------------------------------Subtract
+;------------------------------------------------Subtract
 	mov	eax, number1
 	sub	eax, number2
 	mov	difference, eax
 
-;----------------------------------------------------------------------------------------------Multiply
+;------------------------------------------------Multiply
 	mov	eax, number1
 	mov	ebx, number2
 	mul	ebx
 	mov	product, eax
 
-;----------------------------------------------------------------------------------------------Divide
+;------------------------------------------------Divide
 	mov	edx, 0
 	mov	eax, number1
 	mov	ebx, number2
@@ -110,9 +110,9 @@ Top :
 	mov	remainder, edx
 
 
-;----------------------------------------------------------------------------------------------Display results
+;------------------------------------------------Display results
 
-;----------------------------------------------------------------------------------------------Add
+;------------------------------------------------Add
 	mov	eax, number1
 	call	WriteDec
 	mov	edx, OFFSET plus
@@ -124,7 +124,7 @@ Top :
 	mov	eax, sum
 	call	WriteDec
 	call	CrLf
-;----------------------------------------------------------------------------------------------Subtract
+;------------------------------------------------Subtract
 	mov	eax, number1
 	call	WriteDec
 	mov	edx, OFFSET subtract
@@ -136,7 +136,7 @@ Top :
 	mov	eax, difference
 	call	WriteDec
 	call	CrLf
-;----------------------------------------------------------------------------------------------Multiply	
+;------------------------------------------------Multiply	
 	mov	eax, number1
 	call	WriteDec
 	mov	edx, OFFSET times
@@ -148,7 +148,7 @@ Top :
 	mov	eax, product
 	call	WriteDec
 	call	CrLf
-;----------------------------------------------------------------------------------------------Divide	
+;------------------------------------------------Divide	
 	mov	eax, number1
 	call	WriteDec
 	mov	edx, OFFSET divide
@@ -167,14 +167,14 @@ Top :
 	call	CrLf
 	jmp	GoToEnd
 
-;----------------------------------------------------------------------------------------------Warn user number1 must be greater than number2
+;------------------------------------------------Warn user number1 must be greater than number2
 NegSubtraction :
 	mov	edx, OFFSET negative
 	call	WriteString
 	call	CrLf
 	call	CrLf
 
-;----------------------------------------------------------------------------------------------Ask user if they want to repeat
+;------------------------------------------------Ask user if they want to repeat
 GoToEnd :
 	mov	edx, OFFSET repetition1
 	call	WriteString
@@ -184,16 +184,15 @@ GoToEnd :
 	jz	Top
 	mov	char, AL
 	
-;----------------------------------------------------------------------------------------------Say goodbye
+;------------------------------------------------Say goodbye
 	call	CrLf
 	call	CrLf
 	mov	edx, OFFSET goodbye
 	call	WriteString
 	call	CrLf
 
-;----------------------------------------------------------------------------------------------exit to operating system
+;------------------------------------------------exit to operating system
 	exit
-	
 main ENDP
 
 END main
