@@ -45,7 +45,7 @@ main PROC
 	call	showComposites
 	call	farewell
 
-; exit to operating system
+;------------------------------------------------exit to operating system
 	exit
 main ENDP
 
